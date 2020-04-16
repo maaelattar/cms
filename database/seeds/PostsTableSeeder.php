@@ -6,6 +6,7 @@ use App\Tag;
 use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class PostsTableSeeder extends Seeder
 {
@@ -38,7 +39,9 @@ class PostsTableSeeder extends Seeder
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptates hic sed totam est cupiditate dolore deleniti! Odit repellendus, beatae iure incidunt laudantium repudiandae quos? Maxime natus quae asperiores sed.',
             'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptates hic sed totam est cupiditate dolore deleniti! Odit repellendus, beatae iure incidunt laudantium repudiandae quos? Maxime natus quae asperiores sed.',
             'category_id' => $category1->id,
-            'image' => 'posts/1.jpg',
+
+            'image' => 'https://maa-cms.s3.eu-central-1.amazonaws.com/images/1.jpg',
+            'published_at' => now(),
             'user_id' => $author1->id,
         ]);
         $post2 = $author2->posts()->create([
@@ -46,21 +49,24 @@ class PostsTableSeeder extends Seeder
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptates hic sed totam est cupiditate dolore deleniti! Odit repellendus, beatae iure incidunt laudantium repudiandae quos? Maxime natus quae asperiores sed.',
             'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptates hic sed totam est cupiditate dolore deleniti! Odit repellendus, beatae iure incidunt laudantium repudiandae quos? Maxime natus quae asperiores sed.',
             'category_id' => $category2->id,
-            'image' => 'posts/2.jpg',
+            'published_at' => now(),
+            'image' => 'https://maa-cms.s3.eu-central-1.amazonaws.com/images/2.jpg',
         ]);
         $post3 = $author1->posts()->create([
             'title' => 'Best practices for minimalist design with example',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptates hic sed totam est cupiditate dolore deleniti! Odit repellendus, beatae iure incidunt laudantium repudiandae quos? Maxime natus quae asperiores sed.',
             'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptates hic sed totam est cupiditate dolore deleniti! Odit repellendus, beatae iure incidunt laudantium repudiandae quos? Maxime natus quae asperiores sed.',
             'category_id' => $category3->id,
-            'image' => 'posts/3.jpg',
+            'published_at' => now(),
+            'image' => 'https://maa-cms.s3.eu-central-1.amazonaws.com/images/3.jpg',
         ]);
         $post4 = $author2->posts()->create([
             'title' => 'Best practices for minimalist design with example',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptates hic sed totam est cupiditate dolore deleniti! Odit repellendus, beatae iure incidunt laudantium repudiandae quos? Maxime natus quae asperiores sed.',
             'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptates hic sed totam est cupiditate dolore deleniti! Odit repellendus, beatae iure incidunt laudantium repudiandae quos? Maxime natus quae asperiores sed.',
             'category_id' => $category2->id,
-            'image' => 'posts/4.jpg',
+            'published_at' => now(),
+            'image' => 'https://maa-cms.s3.eu-central-1.amazonaws.com/images/4.jpg',
         ]);
         $tag1 = Tag::create([
             'name' => 'Job',
